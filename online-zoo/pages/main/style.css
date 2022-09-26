@@ -1438,6 +1438,7 @@ menu {
   color: #BDBDBD;
   padding: 0 0 0 10px;
   margin: 0 6px 0 0;
+  outline: none;
 }
 .subscribe__email::placeholder {
   font-weight: 400;
@@ -1445,11 +1446,18 @@ menu {
   line-height: 140%;
   color: #BDBDBD;
 }
-.subscribe__email:active {
+.subscribe__email:active, .subscribe__email:focus {
   appearance: none;
   border: 0.7px solid #4B9200;
+  color: #4B9200;
+}
+.subscribe__email:active::placeholder, .subscribe__email:focus::placeholder {
+  color: #4B9200;
 }
 .subscribe__email:invalid + .subscribe__btn {
+  color: #D31414;
+}
+.subscribe__email:invalid {
   color: #D31414;
   border-color: #D31414;
 }

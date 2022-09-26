@@ -447,7 +447,18 @@ menu {
     background-color: rgba($color: white, $alpha: 0);
     padding: 0 0 0 9px;
     display: block;
-    
+    outline: none;
+    &:focus, 
+    &:active {
+      border-color:  $color-green;
+    }
+    &:focus::placeholder, 
+    &:active::placeholder {
+      color: $color-green;
+    }
+    &:invalid {
+      border-color: $color-rad;
+    }
 
     &-simbol {
       position: relative;
@@ -465,9 +476,17 @@ menu {
         background-size: cover;
         position: absolute;
         top: 16px;
-        right: 9px;
+        right: 9px;    
+      }
+      &:has(input:active)::before,
+      &:has(input:focus)::before  {
+        background-image: url("../../assets/icons/dollar-green.svg");
+      }
+      &:has(input:invalid)::before {
+        background-image: url("../../assets/icons/dollar-red.svg");
       }
     }
+
   }
   &__choise {
     margin: 0 auto 28px;
@@ -692,7 +711,7 @@ menu {
       border-radius: 50%;
       border: 1px solid #FE9013;
       position: absolute;
-      top: 0;
+      top: 3px;
       left: 0;
     }
     &:has(input:checked)::before {
@@ -762,17 +781,29 @@ menu {
     color: #BDBDBD;
     padding: 0 0 0 10px;
     margin: 0 6px 0 0;
+    outline: none;
     &::placeholder {
       font-weight: 400;
       font-size: 16px;
       line-height: 140%;
       color: #BDBDBD;
     }
-    &:active {
+    &:active,
+    &:focus {
       appearance: none;
       border: 0.7px solid $color-green;
+      color: $color-green;
     }
+    &:active::placeholder,
+    &:focus::placeholder {
+      color: $color-green;
+    }
+
     &:invalid + .subscribe__btn {
+      color: $color-rad;
+      // outline: $color-rad;
+    }
+    &:invalid {
       color: $color-rad;
       border-color: $color-rad;
     }
