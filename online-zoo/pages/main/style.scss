@@ -51,7 +51,7 @@ $color-glass-white: rgba(253, 253, 255, 0.52);
   color: $color-black-blue;
 }
 body {
-  overflow: hidden;
+  // overflow: hidden;
 }
 .content {
   max-width: 1160px;
@@ -1145,6 +1145,7 @@ menu {
   max-height: 919px;
   padding: 140px 0 0 0 ;
   position: relative;
+  overflow: hidden;
 
   &__title {
     font-weight: normal;
@@ -1158,7 +1159,7 @@ menu {
     height: 295px;
     background-image: url("../../assets/images/leav-desktop.jpg");
     position: absolute;
-    bottom: -200px;
+    bottom: -20px;
     right: -53px;
     z-index: -10;
   }

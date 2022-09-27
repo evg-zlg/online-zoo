@@ -38,10 +38,6 @@
   color: #333B41;
 }
 
-body {
-  overflow: hidden;
-}
-
 .content {
   max-width: 1160px;
   width: 100%;
@@ -1280,6 +1276,7 @@ menu {
   max-height: 919px;
   padding: 140px 0 0 0;
   position: relative;
+  overflow: hidden;
 }
 .section-4__title {
   font-weight: normal;
@@ -1293,7 +1290,7 @@ menu {
   height: 295px;
   background-image: url("../../assets/images/leav-desktop.jpg");
   position: absolute;
-  bottom: -200px;
+  bottom: -20px;
   right: -53px;
   z-index: -10;
 }
