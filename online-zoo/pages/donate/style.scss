@@ -380,7 +380,10 @@ menu {
   @media (max-width: 1280px) {
     height: 389px;
     background-position: -170px 0px;
-
+  }
+  @media (max-width: 999px) {
+    height: 335px;
+    background-position: -273px 0px;
   }
 }
 .section-2 {
@@ -389,6 +392,10 @@ menu {
   padding: 40px 0 0 0;
   @media (max-width:1280px) {
     height: 1333px;
+  }
+  @media (max-width:999px) {
+    padding: 31px 20px 0 20px;
+
   }
   &__title {
     font-weight: normal;
@@ -400,6 +407,13 @@ menu {
       padding: 0 100px 0 0;
       margin: 0 0 31px 0;
     }
+    @media (max-width: 999px) {
+      font-size: 24px;
+      line-height: 120%;
+      padding: 0 0 0 0;
+      margin: 0 0 19px 0;
+    }
+    
   }
   &__text {
     font-weight: 500;
@@ -407,6 +421,9 @@ menu {
     line-height: 140%;
     color: #FFFFFF;
     margin: 0 0 44px 0;
+    @media (max-width: 999px) {
+      margin: 0 0 29px 0;
+    }
   }
   &__sub-title {
     font-weight: 400;
@@ -417,6 +434,10 @@ menu {
     @media (max-width: 1280px) {
       margin: 0 0 41px 0;
     }
+    @media (max-width: 999px) {
+      margin: 0 0 30px 0;
+    } 
+    
   }
 }
 .feed {
@@ -431,6 +452,9 @@ menu {
     height: 100%;
     max-height: 918px;
   }
+  @media (max-width: 999px) {
+    padding: 29px 28px 0 28px;
+  }
 
   &__title {
     font-weight: 400;
@@ -442,6 +466,9 @@ menu {
     @media (max-width: 1280px) {
       margin: 0 0 12px -11px;
     }
+    @media (max-width: 999px) {
+      margin: 0 0 20px 2px;
+    }
   }
   &__sub-title {
     font-weight: normal;
@@ -449,18 +476,29 @@ menu {
     line-height: 120%;
     color: $color-black-blue;
     margin: 0 0 60px 0;
-    @media (max-width: 1280px) {
-      
+    @media (max-width: 999px) {
+      text-align: center;
+      margin: 0 0 51px 2px;
     }
   }
   &__widget {
     margin: 0 auto 48px;
     // padding: 0 0 0 44px;
+    @media (max-width: 999px) {
+      margin: 0 auto 42px
+    }
   }
   &__amount {
     margin: 0 0 50px 0;
     @media (max-width: 1280px) {
       margin: -2px 0 50px 14px;
+    }
+    @media (max-width: 999px) {
+      margin: -2px auto 50px;
+      width: 617px;
+    }
+    @media (max-width: 698px) {
+      margin: -2px 0 50px -30px;
     }
   }
   input::-webkit-outer-spin-button,
@@ -480,6 +518,11 @@ menu {
     padding: 0 0 0 9px;
     display: block;
     outline: none;
+    @media (max-width: 999px) {
+      width: 180px;
+      height: 42px;
+      padding: 0 0 0 6px;
+    }
     &:focus, 
     &:active {
       border-color:  $color-green;
@@ -498,6 +541,9 @@ menu {
       width: fit-content;
       margin: 0 auto 27px;
 
+      @media (max-width: 999px) {
+        margin: 0 auto 31px;
+      }
       &::before {
         content: "";
         display: block;
@@ -509,6 +555,9 @@ menu {
         position: absolute;
         top: 16px;
         right: 9px;    
+        @media (max-width: 999px) {
+          top: 12px;
+        }
       }
       &:has(input:active)::before,
       &:has(input:focus)::before  {
@@ -522,6 +571,9 @@ menu {
   }
   &__choise {
     margin: 0 auto 28px;
+    @media (max-width: 999px) {
+      margin: 0 auto 30px;
+    }
   }
   &__btn {
     margin: 0 auto 30px;
@@ -586,6 +638,9 @@ menu {
     color: #000000;
     display: block;
     margin: 0 0 17px 4px;
+    @media (max-width: 999px) {
+      margin: 0 0 6px 10px;
+    }
   }
   &__group {
     height: 75px;
@@ -603,6 +658,9 @@ menu {
     @media (max-width:1280px) {
       gap: 97px;
     }
+    @media (max-width: 999px) {
+      gap: 107px;
+    }
     
     &::before {
       content: "";
@@ -618,6 +676,10 @@ menu {
       @media (max-width: 1280px) {
         left: 20px;
         right: 13px;
+      }
+      @media (max-width: 999px) {
+        left: 40px;
+        right: 38px;
       }
     }
   }
@@ -649,6 +711,9 @@ menu {
       @media (max-width:1280px) {
         left: -1px;
       }
+      @media (max-width:999px) {
+        left: 7px;
+      }
     }
     &:nth-child(1) {
       @media (max-width: 1280px) {
@@ -660,11 +725,17 @@ menu {
       @media (max-width: 1280px) {
         right: -2px;
       }
+      @media (max-width: 999px) {
+        display: none;
+      }
     }
     &:nth-child(3) {
       right: 21px;
       @media (max-width: 1280px) {
         right: 11px;
+      }
+      @media (max-width: 999px) {
+        display: none; 
       }
     }
     &:nth-child(4) {
@@ -672,11 +743,17 @@ menu {
       @media (max-width: 1280px) {
         right: 23px;
       }
+      @media (max-width: 999px) {
+        right: -17px;
+      }
     }
     &:nth-child(5) {
       right: 27px;
       @media (max-width: 1280px) {
         right: 21px;
+      }
+      @media (max-width: 999px) {
+        right: -9px;
       }
     }
     &:nth-child(6) {
@@ -684,11 +761,17 @@ menu {
       @media (max-width: 1280px) {
         right: 19px;
       }
+      @media (max-width: 999px) {
+        right: -2px;
+      }
     }
     &:nth-child(7) {
       right: 18px;
       @media (max-width: 1280px) {
         right: 17px;
+      }
+      @media (max-width: 999px) {
+        right: 6px;
       }
     }
   }
@@ -717,6 +800,9 @@ menu {
       @media (max-width:1280px) {
         left: -16px;
       }
+      @media (max-width:999px) {
+        left: -8px;
+      }
     }
     
     &:checked ~span::after {
@@ -733,6 +819,9 @@ menu {
       
       @media (max-width:1280px) {
         left: -8px;
+      }
+      @media (max-width:999px) {
+        left: 0px;
       }
     }
     
@@ -804,8 +893,12 @@ menu {
 }
 
 .footer {
+  overflow: hidden;
   background: #111115;
   padding: 40.5px 0 0 0;
+  @media (max-width:999px) {
+    padding: 11.5px 0 0 0;
+  }
   .content {
     display: flex;
     flex-direction: column;
@@ -816,21 +909,46 @@ menu {
     
     &:nth-child(1) {
       margin: 0 0 35px 0;
+      @media (max-width:999px) {
+        margin: 0 0 32px 0;
+      }
     }
     &:nth-child(2) {
       margin: 0 0 47px 0;
+      .btn {
+        margin: 0 0 50px 19px;
+      }
     }
     &:nth-child(3) {
       margin: 0 0 50px 0;
+      position: relative;
     }
   }
   menu {
     width: 371px;
     padding: 0 0 2px 0;
     margin: auto 0 0 125px;
-    @media (max-width: 1280px) {
-      margin: auto 0 0 155px;
+    @media (max-width: 999px) {
+      margin: 0 0 0 11px;
+      width: 371px;
+      padding: 0 0 2px 0;
     }
+    .menu {
+      @media (max-width: 999px) {
+        gap: 26px;
+      }
+    }
+    .menu__link {
+      @media (max-width:999px) {
+        color:white;
+      }
+    }
+  }
+  .logo {
+    margin: 1px 0 0 21px;
+    font-weight: normal;
+    font-size: 19.0145px;
+    line-height: 120%;
   }
   &__copyright {
     font-weight: 100;
@@ -839,11 +957,17 @@ menu {
     color: #FFFFFF;
     padding: 0 0 0 0;
     margin: auto 0 0 0;
+    @media (max-width: 999px) {
+      margin: -32px 21px 0 0;
+    }
   }
 }
 .subscribe {
   @media (max-width: 1280px) {
     margin: 0 33px 0 0;
+  }
+  @media (max-width: 999px) {
+    display: none;
   }
   &__title {
     font-weight: 400;
@@ -917,11 +1041,17 @@ menu {
   display: flex;
   flex-direction: column;
   gap: 10px;
-
+  @media (max-width: 999px) {
+    position:absolute;
+    top: -236px;
+    right: -64px;
+    gap: 20px;
+  }
   &__item {
     list-style-type: none;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+
     &:hover {
       transform: scale(1.05);
     }
@@ -932,7 +1062,6 @@ menu {
     align-items: center;
     gap: 12px;
     
-
   }
   &__icon {
     display: inline-block;
@@ -985,5 +1114,8 @@ menu {
     line-height: 100%;
     color: #FFFFFF;
     cursor: pointer;
+    @media (max-width:999px) {
+      visibility: hidden;;
+    }
   }
 }
