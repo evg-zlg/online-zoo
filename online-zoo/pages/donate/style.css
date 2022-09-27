@@ -44,6 +44,11 @@
   height: 100%;
   margin: auto auto;
 }
+@media (max-width: 1280px) {
+  .content {
+    max-width: 940px;
+  }
+}
 @media (max-width: 768px) {
   .content {
     max-width: 768px;
@@ -372,11 +377,22 @@ menu {
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media (max-width: 1280px) {
+  .section-1 {
+    height: 389px;
+    background-position: -170px 0px;
+  }
+}
 
 .section-2 {
   height: 1482px;
   background-image: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%);
   padding: 40px 0 0 0;
+}
+@media (max-width: 1280px) {
+  .section-2 {
+    height: 1333px;
+  }
 }
 .section-2__title {
   font-weight: normal;
@@ -384,6 +400,12 @@ menu {
   line-height: 130%;
   color: #FFFFFF;
   margin: 0 0 10px 0;
+}
+@media (max-width: 1280px) {
+  .section-2__title {
+    padding: 0 100px 0 0;
+    margin: 0 0 31px 0;
+  }
 }
 .section-2__text {
   font-weight: 500;
@@ -399,6 +421,11 @@ menu {
   color: #FE9013;
   margin: 0 0 60px 0;
 }
+@media (max-width: 1280px) {
+  .section-2__sub-title {
+    margin: 0 0 41px 0;
+  }
+}
 
 .feed {
   width: 100%;
@@ -408,6 +435,13 @@ menu {
   border-radius: 20px;
   padding: 85px 63px 62px 121px;
 }
+@media (max-width: 1280px) {
+  .feed {
+    padding: 19px 49px 0 47px;
+    height: 100%;
+    max-height: 918px;
+  }
+}
 .feed__title {
   font-weight: 400;
   font-size: 48px;
@@ -415,6 +449,11 @@ menu {
   text-align: center;
   color: #FE9013;
   margin: 0 0 20px -15px;
+}
+@media (max-width: 1280px) {
+  .feed__title {
+    margin: 0 0 12px -11px;
+  }
 }
 .feed__sub-title {
   font-weight: normal;
@@ -428,6 +467,11 @@ menu {
 }
 .feed__amount {
   margin: 0 0 50px 0;
+}
+@media (max-width: 1280px) {
+  .feed__amount {
+    margin: -2px 0 50px 14px;
+  }
 }
 .feed input::-webkit-outer-spin-button,
 .feed input::-webkit-inner-spin-button {
@@ -531,6 +575,11 @@ menu {
   margin: 0 0 0 74px;
 }
 
+@media (max-width: 1280px) {
+  .amount {
+    padding: 0 16px 0 3px;
+  }
+}
 .amount__label {
   font-weight: 400;
   font-size: 16px;
@@ -553,6 +602,11 @@ menu {
   margin: 0 0 12px 0;
   position: relative;
 }
+@media (max-width: 1280px) {
+  .amount__radio-group {
+    gap: 97px;
+  }
+}
 .amount__radio-group::before {
   content: "";
   height: 2px;
@@ -564,6 +618,12 @@ menu {
   left: 30px;
   right: 30px;
   z-index: 1;
+}
+@media (max-width: 1280px) {
+  .amount__radio-group::before {
+    left: 20px;
+    right: 13px;
+  }
 }
 .amount__radio-label {
   display: block;
@@ -592,23 +652,63 @@ menu {
   left: 15px;
   top: 2px;
 }
+@media (max-width: 1280px) {
+  .amount__radio-label::before {
+    left: -1px;
+  }
+}
+@media (max-width: 1280px) {
+  .amount__radio-label:nth-child(1) {
+    display: none;
+  }
+}
 .amount__radio-label:nth-child(2) {
   right: 10px;
+}
+@media (max-width: 1280px) {
+  .amount__radio-label:nth-child(2) {
+    right: -2px;
+  }
 }
 .amount__radio-label:nth-child(3) {
   right: 21px;
 }
+@media (max-width: 1280px) {
+  .amount__radio-label:nth-child(3) {
+    right: 11px;
+  }
+}
 .amount__radio-label:nth-child(4) {
   right: 31px;
+}
+@media (max-width: 1280px) {
+  .amount__radio-label:nth-child(4) {
+    right: 23px;
+  }
 }
 .amount__radio-label:nth-child(5) {
   right: 27px;
 }
+@media (max-width: 1280px) {
+  .amount__radio-label:nth-child(5) {
+    right: 21px;
+  }
+}
 .amount__radio-label:nth-child(6) {
   right: 22px;
 }
+@media (max-width: 1280px) {
+  .amount__radio-label:nth-child(6) {
+    right: 19px;
+  }
+}
 .amount__radio-label:nth-child(7) {
   right: 18px;
+}
+@media (max-width: 1280px) {
+  .amount__radio-label:nth-child(7) {
+    right: 17px;
+  }
 }
 .amount__radio {
   opacity: 0;
@@ -633,6 +733,11 @@ menu {
   left: 0px;
   z-index: 10;
 }
+@media (max-width: 1280px) {
+  .amount__radio:checked ~ span::before {
+    left: -16px;
+  }
+}
 .amount__radio:checked ~ span::after {
   content: "";
   display: block;
@@ -644,6 +749,11 @@ menu {
   top: -5px;
   left: 8px;
   z-index: 10;
+}
+@media (max-width: 1280px) {
+  .amount__radio:checked ~ span::after {
+    left: -8px;
+  }
 }
 .amount span {
   display: inline-block;
@@ -733,6 +843,11 @@ menu {
   padding: 0 0 2px 0;
   margin: auto 0 0 125px;
 }
+@media (max-width: 1280px) {
+  .footer menu {
+    margin: auto 0 0 155px;
+  }
+}
 .footer__copyright {
   font-weight: 100;
   font-size: 16px;
@@ -742,6 +857,11 @@ menu {
   margin: auto 0 0 0;
 }
 
+@media (max-width: 1280px) {
+  .subscribe {
+    margin: 0 33px 0 0;
+  }
+}
 .subscribe__title {
   font-weight: 400;
   font-size: 24px;
