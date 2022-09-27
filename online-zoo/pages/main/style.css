@@ -38,6 +38,10 @@
   color: #333B41;
 }
 
+body {
+  overflow: hidden;
+}
+
 .content {
   max-width: 1160px;
   width: 100%;

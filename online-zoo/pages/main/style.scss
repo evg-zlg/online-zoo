@@ -50,7 +50,9 @@ $color-glass-white: rgba(253, 253, 255, 0.52);
   font-size: 16px;
   color: $color-black-blue;
 }
-
+body {
+  overflow: hidden;
+}
 .content {
   max-width: 1160px;
   width: 100%;
