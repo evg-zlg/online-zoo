@@ -1049,9 +1049,15 @@ menu {
       }
     }
     &:nth-child(2) {
-      margin: 0 0 47px 0;
+      margin: 0 0 48px 0;
       .btn {
-        margin: 0 0 50px 19px;
+        margin: 0 0 50px -1px;
+        @media (max-width: 1200px) {
+          margin: 0 0 50px 0px;
+        }
+        @media (max-width: 999px) {
+          margin: 0 0 50px 18px;
+        }
         @media (max-width: 639px) {
           margin: 0 0 62px -4px;
         }
@@ -1063,19 +1069,25 @@ menu {
     &:nth-child(3) {
       margin: 0 0 50px 0;
       position: relative;
+      @media (max-width:1200px) {
+        
+      }
     }
   }
   menu {
     width: 371px;
     padding: 0 0 2px 0;
     margin: auto 0 0 125px;
+    @media (max-width: 1200px) {
+      margin: auto 0 0 159px;
+    }
     @media (max-width: 999px) {
       margin: 0 0 0 11px;
       width: 371px;
       padding: 0 0 2px 0;
     }
     @media (max-width: 639px) {
-      margin: 0 0 0 -9px;
+      margin: -2px 0 0 -5px;
       width: 100%;
       padding: 0 0 2px 0;
     }
@@ -1095,10 +1107,16 @@ menu {
     }
   }
   .logo {
-    margin: 1px 0 0 21px;
+    margin: -1px 0 0 0px;
     font-weight: normal;
     font-size: 19.0145px;
     line-height: 120%;
+    @media (max-width: 1200px) {
+      margin: -1px 0 0px 1px;
+    }
+    @media (max-width: 999px) {
+      margin: 1px 0 0px 20px;
+    }
     @media (max-width: 639px) {
       border: none;
       width: auto;
@@ -1120,6 +1138,9 @@ menu {
     color: #FFFFFF;
     padding: 0 0 0 0;
     margin: auto 0 0 0;
+    @media (max-width: 1200px) {
+      margin: 27px 0px 0 0;
+    }
     @media (max-width: 999px) {
       margin: -32px 21px 0 0;
     }
@@ -1134,7 +1155,7 @@ menu {
 }
 .subscribe {
   @media (max-width: 1280px) {
-    margin: 0 33px 0 0;
+    margin: 0 32px 0 0;
   }
   @media (max-width: 999px) {
     display: none;
@@ -1211,14 +1232,18 @@ menu {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin: -51px 0px 0 0px;
+  @media (max-width:1200px) {
+    margin: -50px 0px 0 0px;
+  }
   @media (max-width: 999px) {
     position:absolute;
-    top: -236px;
+    top: -186px;
     right: -64px;
     gap: 20px;
   }
   @media (max-width: 639px) {
-    top: -219px;
+    top: -170px;
     right: 0;
     gap: 30px;
     width: 100%;
