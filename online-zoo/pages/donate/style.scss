@@ -102,6 +102,7 @@ $color-glass-white: rgba(253, 253, 255, 0.52);
   padding: 0 30px;
   position: relative;
   z-index: 20;  
+
   .content {
     display: flex;
     align-items: center;
@@ -109,7 +110,6 @@ $color-glass-white: rgba(253, 253, 255, 0.52);
     @media (max-width: 768px) {
       // flex-direction: column;
       // align-items: flex-start;
-      
       padding: 3px 0 0 0px;
     }
   } 
@@ -174,7 +174,9 @@ $color-glass-white: rgba(253, 253, 255, 0.52);
   }
   @media (max-width: 768px) {
     height: 34px;
-    padding: 3px 10px 0 2px;
+    padding: 3px 0 0 2px;
+    position:fixed;
+
   }
   @media (max-width: 414px) {
     font-size: 12.2899px;
@@ -329,7 +331,7 @@ menu {
 }
 .menu__copyright {
   margin-left: auto; 
-  letter-spacing: -0.70px;
+  letter-spacing: -0.1px;
   margin-right: 3px;
   @media (max-width: 1000px) {
     margin-right: 2px;
@@ -374,20 +376,29 @@ menu {
 .section-1 {
   height: 385px;
   width: 100%;
-  background-image: url("../../assets/images/panda-donate.jpg");
+  background-image: url("../../assets/images/giant-panda.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  @media (max-width: 1280px) {
+  background-position: 0 -21.5vw;
+  @media (max-width: 1024px) {
     height: 389px;
-    background-position: -170px 0px;
+    background-size: 160%;
+    background-position: -173px -34vw;
   }
-  @media (max-width: 999px) {
-    height: 335px;
-    background-position: -273px 0px;
+  @media (max-width: 650px) {
+    height: 368px;
+    background-size: 214%;
+    background-position: -271px -40.1vw;
   }
-  @media (max-width: 639px) {
-    height: 187px;
-    background-position: -149px 0px;
+  @media (max-width: 550px) {
+    height: 261px;
+    background-size: 206%;
+    background-position: -38.8vw -44vw;
+  }
+  @media (max-width: 350px) {
+    height: 221px;
+    background-size: 239%;
+    background-position: -148px -40vw;
   }
   
 }
@@ -460,7 +471,7 @@ menu {
   background: rgba(255, 255, 255, 0.52);
   backdrop-filter: blur(2px);
   border-radius: 20px;
-  padding: 85px 63px 62px 121px;
+  padding: 41px 94px 62px 91px;
   @media (max-width: 1280px) {
     padding: 19px 49px 0 47px;
     height: 100%;
@@ -753,9 +764,9 @@ menu {
       border-radius: 2px;
       border: none;
       position: absolute;
-      top: 12px;
+      top: 13px;
       left: 30px;
-      right: 30px;
+      right: 33px;
       z-index: 1;
       @media (max-width: 1280px) {
         left: 20px;
@@ -899,8 +910,20 @@ menu {
     height: 25px;
     width: 25px;
     position: relative;
-    left:6px;
+    left:8px;
     top: -16px;
+    @media (max-width:1280px) {
+      left: -8px;
+      top: -16px;
+    }
+    @media (max-width:999px) {
+      left: 0px;
+      top: -16px;
+    }
+    @media (max-width:639px) {
+      left: -16px;
+      top: -2px;
+    }
     &:checked ~span::before {
       content: "";
       display: block;
