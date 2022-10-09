@@ -76,5 +76,14 @@ anotherAmount.addEventListener("input", (e) => {
         elem.checked = false;
       });
   }
-  console.log(typeof(e.target.value));
+});
+
+function validAmount(value) {
+  const regex = /[\d]/;
+  return regex.test(value);
+}
+anotherAmount.addEventListener("keypress", (e) => {
+  if ((! validAmount(e.key)) || (anotherAmount.value.length === 4)) {
+    e.preventDefault();
+  };
 });
