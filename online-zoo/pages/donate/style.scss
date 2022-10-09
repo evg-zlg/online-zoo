@@ -980,7 +980,7 @@ menu {
       left: -16px;
       top: -2px;
     }
-    &:checked ~span::before {
+    ~span::before {
       content: "";
       display: block;
       width: 40px;
@@ -991,6 +991,8 @@ menu {
       top: -13px;
       left: 0px;
       z-index: 10;
+      opacity: 0;
+      transition: opacity 0.3s ease 0s;
       
       @media (max-width:1280px) {
         left: -16px;
@@ -1005,8 +1007,12 @@ menu {
         height: 22px;
       }
     }
+
+    &:checked ~span::before {
+      opacity: 1;
     
-    &:checked ~span::after {
+    }
+    ~span::after {
       content: "";
       display: block;
       width: 24px;
@@ -1017,7 +1023,9 @@ menu {
       top: -5px;
       left: 8px;
       z-index: 10;
-      
+      opacity: 0;
+      transition: opacity 0.3s ease 0s;
+
       @media (max-width:1280px) {
         left: -8px;
       }
@@ -1030,6 +1038,9 @@ menu {
         width: 14px;
         height: 14px;
       }
+    }
+    &:checked ~span::after {
+      opacity: 1;
     }
     
   }

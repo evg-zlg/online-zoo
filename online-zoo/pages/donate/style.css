@@ -1096,7 +1096,7 @@ menu {
     top: -2px;
   }
 }
-.amount__radio:checked ~ span::before {
+.amount__radio ~ span::before {
   content: "";
   display: block;
   width: 40px;
@@ -1107,26 +1107,31 @@ menu {
   top: -13px;
   left: 0px;
   z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease 0s;
 }
 @media (max-width: 1280px) {
-  .amount__radio:checked ~ span::before {
+  .amount__radio ~ span::before {
     left: -16px;
   }
 }
 @media (max-width: 999px) {
-  .amount__radio:checked ~ span::before {
+  .amount__radio ~ span::before {
     left: -8px;
   }
 }
 @media (max-width: 639px) {
-  .amount__radio:checked ~ span::before {
+  .amount__radio ~ span::before {
     left: -15px;
     top: 7px;
     width: 22px;
     height: 22px;
   }
 }
-.amount__radio:checked ~ span::after {
+.amount__radio:checked ~ span::before {
+  opacity: 1;
+}
+.amount__radio ~ span::after {
   content: "";
   display: block;
   width: 24px;
@@ -1137,24 +1142,29 @@ menu {
   top: -5px;
   left: 8px;
   z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease 0s;
 }
 @media (max-width: 1280px) {
-  .amount__radio:checked ~ span::after {
+  .amount__radio ~ span::after {
     left: -8px;
   }
 }
 @media (max-width: 999px) {
-  .amount__radio:checked ~ span::after {
+  .amount__radio ~ span::after {
     left: 0px;
   }
 }
 @media (max-width: 639px) {
-  .amount__radio:checked ~ span::after {
+  .amount__radio ~ span::after {
     left: -11px;
     top: 11px;
     width: 14px;
     height: 14px;
   }
+}
+.amount__radio:checked ~ span::after {
+  opacity: 1;
 }
 .amount span {
   display: inline-block;
