@@ -78,7 +78,20 @@ function repairHidden(arr, leng) {
 
 //random cards after load page
 document.addEventListener("DOMContentLoaded", () => {
-  const countAnimals = animalCards.length;
+  // let oldCards = document.querySelector(".cards__items");
+  // let newOrder = shuffleArray(animalCards);
+  // let newCards = createNewOrderCards(newOrder);
+  // repairHidden(newCards, 6);
+  // document.querySelector(".cards").childNodes[1].replaceChild(newCards, oldCards);
+});
+
+//click to right arrow
+document.querySelector(".cards__arrow-right").addEventListener("click", () => {
+
+});
+
+//click to left arrow
+document.querySelector(".cards__arrow-left").addEventListener("click", () => {
   let oldCards = document.querySelector(".cards__items");
   let newOrder = shuffleArray(animalCards);
   let newCards = createNewOrderCards(newOrder);
