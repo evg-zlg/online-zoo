@@ -978,9 +978,6 @@ menu {
       bottom: 10px;
       transition: all 0.5s ease 0s;
       box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
-      @media (max-width:976px) {
-        bottom: -105px;
-      }
     }
 
     .card__footer {
@@ -1052,7 +1049,8 @@ menu {
 }
 
 .cards__arrow-left,
-  .cards__arrow-right {
+.cards__arrow-right {
+    z-index:10;
     width: 62px;
     height: 62px;
     border-radius: 50%;

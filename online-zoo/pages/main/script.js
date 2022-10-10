@@ -52,9 +52,9 @@ function shuffleArray(arr) {
 }
 
 //function create div with new order cards
-function createNewOrderCards(arr) {
+function createNewOrderCards(arr, position) {
   let div = document.createElement("div");
-  div.className = "cards__items";
+  div.className = "cards__items cards__items_"+position;
   arr.forEach(card => {
     div.append(card);
   });
@@ -78,16 +78,40 @@ function repairHidden(arr, leng) {
 
 //random cards after load page
 document.addEventListener("DOMContentLoaded", () => {
-  // let oldCards = document.querySelector(".cards__items");
-  // let newOrder = shuffleArray(animalCards);
-  // let newCards = createNewOrderCards(newOrder);
-  // repairHidden(newCards, 6);
-  // document.querySelector(".cards").childNodes[1].replaceChild(newCards, oldCards);
+  let oldCards = document.querySelector(".cards__items");
+  let newOrder = shuffleArray(animalCards);
+  let newCards = createNewOrderCards(newOrder, "center");
+  repairHidden(newCards, 6);
+  document.querySelector(".cards").childNodes[3].replaceChild(newCards, oldCards);
 });
+
+function clearHidden(arr) {
+  arr.forEach(elem => {
+    if (elem.classList.contains("cards__card_hidden")) {
+      elem.classList.remove("cards__card_hidden");
+    }
+  });
+}
+//create node cards__items with left, rigth or center
+function createCardsItems(arr, position) {
+  let newNode = document.createElement("div");
+  arr.forEach(elem => {
+    newNode.append(elem);
+  });
+  newNode.className = "cards__items cards__items_"+position;
+}
 
 //click to right arrow
 document.querySelector(".cards__arrow-right").addEventListener("click", () => {
-
+  // let collectionAnimals = document.querySelectorAll(".cards__card");
+  // let shuffledAminals = shuffleArray(collectionAnimals);
+  // let newCardsItemsRight = createCardsItems(shuffledAminals, "right");
+  // console.log(shuffledAminals);
+  let oldCards = document.querySelector(".cards__items");
+  let newOrder = shuffleArray(animalCards);
+  let newCards = createNewOrderCards(newOrder);
+  repairHidden(newCards, 6);
+  document.querySelector(".cards").childNodes[3].replaceChild(newCards, oldCards);
 });
 
 //click to left arrow
@@ -96,5 +120,5 @@ document.querySelector(".cards__arrow-left").addEventListener("click", () => {
   let newOrder = shuffleArray(animalCards);
   let newCards = createNewOrderCards(newOrder);
   repairHidden(newCards, 6);
-  document.querySelector(".cards").childNodes[1].replaceChild(newCards, oldCards);
+  document.querySelector(".cards").childNodes[3].replaceChild(newCards, oldCards);
 });
