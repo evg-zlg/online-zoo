@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let newCards = createNewOrderCards(newOrder, "center");
   repairHidden(newCards, 6);
   document.querySelector(".cards").childNodes[3].replaceChild(newCards, oldCards);
+  alert("Привет! Выполнены: бургер меню, шкала донатов. Какое-то подобие активности есть на карточках животных. Отзывы - не выполнены. Планирую доделать в течении двух дней. Если оставишь контакты - я сообщу как будет готово. Удачи!");
 });
 
 function clearHidden(arr) {
