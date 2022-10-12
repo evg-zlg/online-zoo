@@ -90,6 +90,17 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCardItems("left");
   updateCardItems("right");
 
+  // check for count testimonials
+  if (document.documentElement.clientWidth > 1200) {
+    if (document.querySelectorAll(".testimonials__card")[3].classList.contains("hidden")) {
+      document.querySelectorAll(".testimonials__card")[3].classList.remove("hidden")
+    }
+  } else {
+      if (! document.querySelectorAll(".testimonials__card")[3].classList.contains("hidden")) {
+        document.querySelectorAll(".testimonials__card")[3].classList.add("hidden")
+      } 
+    }
+
 });
 
 function clearHidden(arr) {
@@ -191,9 +202,46 @@ document.querySelector(".cards__arrow-left").addEventListener("click", () => {
 
       updateCardItems("left");
       updateCardItems("right");
-      
+
     }
   
   setTimeout(changeCardsItems, 1100);
   
 });
+
+document.querySelector(".testimonials__slider").addEventListener("input", function() {
+  let testimonials = document.querySelectorAll(".testimonials__card");
+  let val = Number(this.value);
+  let count = 0;
+  for (let i = 0; i < testimonials.length; i++) {
+    document.documentElement.clientWidth > 1200 ? count = val + 3 : count = val + 2;
+    if ((val <= i) && (i <= (count))) {
+      testimonials[i].classList.remove("animation_off");
+      testimonials[i].classList.add("animation_on");
+    
+      if (testimonials[i].classList.contains("hidden")) {
+        testimonials[i].classList.remove("hidden")
+      };
+    } else {
+      testimonials[i].classList.remove("animation_on");
+      testimonials[i].classList.add("animation_off");
+      if ( ! testimonials[i].classList.contains("hidden")) {
+        setInterval( testimonials[i].classList.add("hidden"), 300)
+      };
+    }
+  }
+});
+window.addEventListener("resize", () => {
+  if (document.documentElement.clientWidth > 1200) {
+    if (document.querySelectorAll(".testimonials__card")[3].classList.contains("hidden")) {
+      document.querySelectorAll(".testimonials__card")[3].classList.remove("hidden");
+      document.querySelectorAll(".testimonials__card")[3].classList.add("animation");
+    }
+  } else {
+      if (! document.querySelectorAll(".testimonials__card")[3].classList.contains("hidden")) {
+        document.querySelectorAll(".testimonials__card")[3].classList.remove("animation");
+        setInterval(document.querySelectorAll(".testimonials__card")[3].classList.add("hidden"), 300);
+        
+      } 
+    }
+})

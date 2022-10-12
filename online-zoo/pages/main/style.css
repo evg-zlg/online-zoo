@@ -943,7 +943,7 @@ menu {
 }
 
 .hidden {
-  opacity: 0;
+  display: none;
 }
 
 .cards__items {
@@ -1712,9 +1712,28 @@ menu {
     padding: 10px 8px 9px 10px;
   }
 }
-@media (max-width: 1200px) {
-  .testimonials__card:last-child {
-    display: none;
+.testimonials__card .animation_on {
+  animation-name: "on";
+  animation-duration: 0.5s;
+}
+.testimonials__card .animation_off {
+  animation-name: "off";
+  animation-duration: 0.1s;
+}
+@keyframes on {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes off {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
   }
 }
 .testimonials__card::before {

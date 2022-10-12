@@ -845,7 +845,7 @@ menu {
   overflow: hidden;
 }
 .hidden {
-  opacity: 0;
+  display: none;
 }
 .cards__items {
   transition: transform 1s ease 0s;
@@ -1511,12 +1511,37 @@ menu {
     padding: 10px 8px 9px 10px;
   }
   
-
-  &:last-child {
-    @media (max-width: 1200px) {
-      display: none;
+  .animation_on {
+    animation-name: "on"; 
+    animation-duration: 0.5s;
+    
+  }
+  .animation_off {
+    animation-name: "off"; 
+    animation-duration: 0.1s;
+  }
+  @keyframes on {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
+  @keyframes off {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+
+  // &:nth-child(4) {
+  //   @media (max-width: 1200px) {
+  //     display: none;
+  //   }
+  // }
 
   &::before {
     content: "";
