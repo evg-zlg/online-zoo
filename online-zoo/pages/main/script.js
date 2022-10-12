@@ -56,7 +56,7 @@ function createNewOrderCards(arr, position) {
   let div = document.createElement("div");
   div.className = "cards__items cards__items_"+position;
   arr.forEach(card => {
-    div.append(card);
+    div.append(card.cloneNode(true));
   });
   return div;
 }
@@ -76,14 +76,20 @@ function repairHidden(arr, leng) {
   }
 }
 
+//update card items
+function updateCardItems(position) {
+  let query = ".cards__items_"+position;
+  let oldNode = document.querySelector(query);
+  let newNode = createNewOrderCards(shuffleArray(animalCards), position);
+  repairHidden(newNode, 6);
+  document.querySelector(".cards").childNodes[3].replaceChild(newNode, oldNode);
+}
 //random cards after load page
 document.addEventListener("DOMContentLoaded", () => {
-  let oldCards = document.querySelector(".cards__items");
-  let newOrder = shuffleArray(animalCards);
-  let newCards = createNewOrderCards(newOrder, "center");
-  repairHidden(newCards, 6);
-  document.querySelector(".cards").childNodes[3].replaceChild(newCards, oldCards);
-  alert("Привет! Выполнены: бургер меню, шкала донатов. Какое-то подобие активности есть на карточках животных. Отзывы - не выполнены. Планирую доделать в течении двух дней. Если оставишь контакты - я сообщу как будет готово. Удачи!");
+  updateCardItems("center");
+  updateCardItems("left");
+  updateCardItems("right");
+
 });
 
 function clearHidden(arr) {
@@ -94,32 +100,100 @@ function clearHidden(arr) {
   });
 }
 //create node cards__items with left, rigth or center
-function createCardsItems(arr, position) {
-  let newNode = document.createElement("div");
+function pushCardsItems(arr, position) {
+  let query = ".cards__items_"+position;
+  let newNode = document.querySelector(query);
   arr.forEach(elem => {
-    newNode.append(elem);
+    newNode.append(elem.cloneNode(true));
   });
-  newNode.className = "cards__items cards__items_"+position;
+  return newNode;
 }
 
 //click to right arrow
 document.querySelector(".cards__arrow-right").addEventListener("click", () => {
-  // let collectionAnimals = document.querySelectorAll(".cards__card");
-  // let shuffledAminals = shuffleArray(collectionAnimals);
-  // let newCardsItemsRight = createCardsItems(shuffledAminals, "right");
-  // console.log(shuffledAminals);
-  let oldCards = document.querySelector(".cards__items");
-  let newOrder = shuffleArray(animalCards);
-  let newCards = createNewOrderCards(newOrder);
-  repairHidden(newCards, 6);
-  document.querySelector(".cards").childNodes[3].replaceChild(newCards, oldCards);
+  let leftCards = document.querySelector(".cards__items_left");
+  let centerCards = document.querySelector(".cards__items_center");
+  let rightCards = document.querySelector(".cards__items_right");
+
+  document.querySelector(".cards__arrow-left").disabled = true;
+  document.querySelector(".cards__arrow-right").disabled = true;
+  
+  centerCards.style.transition = "";
+  rightCards.style.transition = "";
+
+  centerCards.classList.add("cards__items_center_to_left");
+  rightCards.classList.add("cards__items_right_to_center");
+
+    // change cards itemts from right to left
+    function changeCardsItems() {
+      centerCards.classList.add("cards__items_left");
+      centerCards.classList.remove("cards__items_center");
+    
+      rightCards.classList.remove("cards__items_right");
+      rightCards.classList.add("cards__items_center");
+    
+      leftCards.classList.add("cards__items_right");
+      leftCards.classList.remove("cards__items_left");
+
+      rightCards.style.transition = "all 0s";
+      centerCards.style.transition = "all 0s";
+
+      centerCards.classList.remove("cards__items_center_to_left");
+      rightCards.classList.remove("cards__items_right_to_center");
+      
+      document.querySelector(".cards__arrow-left").disabled = false;
+      document.querySelector(".cards__arrow-right").disabled = false;
+
+      updateCardItems("left");
+      updateCardItems("right");
+    }
+  
+  setTimeout(changeCardsItems, 1100);
+  
 });
 
 //click to left arrow
 document.querySelector(".cards__arrow-left").addEventListener("click", () => {
-  let oldCards = document.querySelector(".cards__items");
-  let newOrder = shuffleArray(animalCards);
-  let newCards = createNewOrderCards(newOrder);
-  repairHidden(newCards, 6);
-  document.querySelector(".cards").childNodes[3].replaceChild(newCards, oldCards);
+  let leftCards = document.querySelector(".cards__items_left");
+  let centerCards = document.querySelector(".cards__items_center");
+  let rightCards = document.querySelector(".cards__items_right");
+
+  document.querySelector(".cards__arrow-left").disabled = true;
+  document.querySelector(".cards__arrow-right").disabled = true;
+  
+  centerCards.style.transition = "";
+  leftCards.style.transition = "";
+
+  centerCards.classList.add("cards__items_center_to_right");
+  leftCards.classList.add("cards__items_left_to_center");
+
+  
+
+    // change cards itemts from left to right
+    function changeCardsItems() {
+      centerCards.classList.add("cards__items_right");
+      centerCards.classList.remove("cards__items_center");
+    
+      leftCards.classList.remove("cards__items_left");
+      leftCards.classList.add("cards__items_center");
+    
+      rightCards.classList.add("cards__items_left");
+      rightCards.classList.remove("cards__items_right");
+
+      leftCards.style.transition = "all 0s";
+      centerCards.style.transition = "all 0s";
+
+      centerCards.classList.remove("cards__items_center_to_right");
+      leftCards.classList.remove("cards__items_left_to_center");
+      
+      document.querySelector(".cards__arrow-left").disabled = false;
+      document.querySelector(".cards__arrow-right").disabled = false;
+
+      updateCardItems("left");
+      updateCardItems("right");
+      
+    }
+  
+  setTimeout(changeCardsItems, 1100);
+  
 });
